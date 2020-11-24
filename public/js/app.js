@@ -53,7 +53,8 @@ form.addEventListener('submit', (e) => {
                 messageTwo.textContent = data.forecast
                 console.log(data.location)
                 console.log(data.forecast)
-                if (data.data.body.currently.precipProbability < 30) {
+                // if (data.data.body.currently.precipProbability <= 0.25) {
+                if (data.data.body.currently.icon != 'rain') {
                     duck(false);
                 } else {
                     duck(true);

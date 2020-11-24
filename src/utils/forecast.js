@@ -10,7 +10,7 @@ const foreCast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find locations weather', undefined)
         } else {
-            callback(undefined, {"forecast":`${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out with a ${body.currently.precipProbability}% chance of rain.`, body})
+            callback(undefined, {"forecast":`${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out with a ${body.currently.precipProbability * 100}% chance of rain.`, body})
         }
     })
 }
